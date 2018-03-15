@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-8">
+                <h1>Bienvenue <strong>Mohammad Ajman</strong>!</h1><br>
+                <div class="row">
+                    <a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                    <p> Aujourd'hui </p>
+                    <a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div><br>
+
+                <h4>Petit déjeuner</h4>
+                    <div class="panel-group" id="accordion">
+                    {% for repas in listeRepas %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ loop.index }}">{{ repas.nomRepas }}</a>
+                                </h4>
+                            </div>
+                            <div id="collapse{{ loop.index }}" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Portion : {{ repas.portion }} g</p>
+                                    <p>Calorie : {{ repas.calorie }} g</p>
+                                    <p>Matières grasses : {{ repas.matiereGrasse }} g</p>
+                                    <p>Glucides : {{ repas.glucide }} g</p>
+                                    <p>Protéines : {{ repas.proteine }} g</p>
+                                    <p>{{ repas.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                    <span class="glyphicon glyphicon-plus-sign"></span> Ajouter
+                </button>
+
+                <h4>Déjeuner</h4>
+                <div class="panel-group" id="accordion">
+                    {% for repas in listeRepas %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ loop.index }}">{{ repas.nomRepas }}</a>
+                                </h4>
+                            </div>
+                            <div id="collapse{{ loop.index }}" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Portion : {{ repas.portion }} g</p>
+                                    <p>Calorie : {{ repas.calorie }} g</p>
+                                    <p>Matières grasses : {{ repas.matiereGrasse }} g</p>
+                                    <p>Glucides : {{ repas.glucide }} g</p>
+                                    <p>Protéines : {{ repas.proteine }} g</p>
+                                    <p>{{ repas.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                    <span class="glyphicon glyphicon-plus-sign"></span> Ajouter
+                </button>
+
+                <h4>Dîner</h4>
+                <div class="panel-group" id="accordion">
+                    {% for repas in listeRepas %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ loop.index }}">{{ repas.nomRepas }}</a>
+                                </h4>
+                            </div>
+                            <div id="collapse{{ loop.index }}" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Portion : {{ repas.portion }} g</p>
+                                    <p>Calorie : {{ repas.calorie }} g</p>
+                                    <p>Matières grasses : {{ repas.matiereGrasse }} g</p>
+                                    <p>Glucides : {{ repas.glucide }} g</p>
+                                    <p>Protéines : {{ repas.proteine }} g</p>
+                                    <p>{{ repas.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                    <span class="glyphicon glyphicon-plus-sign"></span> Ajouter
+                </button>
+
+                <h4>Casse-croûte</h4>
+                <div class="panel-group" id="accordion">
+                    {% for repas in listeRepas %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ loop.index }}">{{ repas.nomRepas }}</a>
+                                </h4>
+                            </div>
+                            <div id="collapse{{ loop.index }}" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Portion : {{ repas.portion }} g</p>
+                                    <p>Calorie : {{ repas.calorie }} g</p>
+                                    <p>Matières grasses : {{ repas.matiereGrasse }} g</p>
+                                    <p>Glucides : {{ repas.glucide }} g</p>
+                                    <p>Protéines : {{ repas.proteine }} g</p>
+                                    <p>{{ repas.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                    <span class="glyphicon glyphicon-plus-sign"></span> Ajouter
+                </button>
+
+            </div>
+
+            <div class="col-sm-3">
+                <div>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary">Voir Menus</button>
+                        <button type="button" class="btn btn-secondary">Voir Recettes</button>
+                    </div>
+
+                    <h3>Chercher un diététiecien</h3>
+                    <h4>Mon diététicien</h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
